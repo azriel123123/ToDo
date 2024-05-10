@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -40,6 +41,7 @@ class TaskController extends Controller
             'name' => $request->name,
             'date'=>$request->date,
             'proses'=>$request->proses,
+            'user_id'=>Auth::user()->id
         ]);
         return redirect()->back()->with('success', 'Mantap data Berhasil Di Tambahkan! 👍');
     }

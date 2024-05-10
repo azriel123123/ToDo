@@ -8,7 +8,7 @@
             <div class="card-body">
                 <h1 class="card-title fs-4">ToDo List</h1>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
-                    Add Activty
+                Add Activty <i class="ri-calendar-2-line"></i> 
                 </button>
                 @include('layouts.tampilan.konten.create-modal')
             </div>
