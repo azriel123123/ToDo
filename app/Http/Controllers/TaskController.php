@@ -14,9 +14,8 @@ class TaskController extends Controller
     public function index()
     {
         $task = Task::count();
-        $tasks = Task::where('user_id',auth()->user()->id)->get();
-        $todo = Task::select('id', 'name', 'date','proses')->get();
-        return view('layouts.tampilan.konten.todo', compact('task','todo','tasks'));
+        $todo = Task::where('user_id',auth()->user()->id)->select('id', 'name', 'date','proses')->latest()->get();
+        return view('layouts.tampilan.konten.todo', compact('task','todo'));
     }
 
     /**
